@@ -1,0 +1,11 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f6f9; /* opcional estilo ERP */
+}
+
+p-card {
+  width: 350px;
+}

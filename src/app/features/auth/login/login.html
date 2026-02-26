@@ -1,0 +1,28 @@
+<div class="center">
+  <p-card header="Iniciar Sesión">
+
+    <div class="field">
+      <label>Email</label>
+      <input pInputText type="email"
+             [ngModel]="email()"
+             (ngModelChange)="email.set($event)" />
+    </div>
+
+    <div class="field">
+      <label>Password</label>
+      <input pInputText type="password"
+             [ngModel]="password()"
+             (ngModelChange)="password.set($event)" />
+    </div>
+
+    <button pButton label="Entrar"
+            class="full-width"
+            (click)="login()">
+    </button>
+
+    <div class="link">
+      <a routerLink="/register">¿No tienes cuenta?</a>
+    </div>
+
+  </p-card>
+</div>
