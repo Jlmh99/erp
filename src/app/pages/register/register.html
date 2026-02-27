@@ -1,0 +1,60 @@
+<p-card header="Registro de Usuario">
+
+  <form [formGroup]="registerForm"
+        (ngSubmit)="onSubmit()"
+        (keydown)="preventEnter($event)">
+
+    <div class="field">
+      <label>Usuario</label>
+      <input pInputText formControlName="usuario" />
+    </div>
+
+    <div class="field">
+      <label>Email</label>
+      <input pInputText formControlName="email" />
+    </div>
+
+    <div class="field">
+      <label>Contraseña</label>
+      <p-password formControlName="password"></p-password>
+    </div>
+
+    <div class="field">
+      <label>Confirmar Contraseña</label>
+      <p-password formControlName="confirmPassword" [feedback]="false"></p-password>
+    </div>
+
+    <div class="field">
+      <label>Nombre Completo</label>
+      <input pInputText formControlName="nombreCompleto" />
+    </div>
+
+    <div class="field">
+      <label>Dirección</label>
+      <input pInputText formControlName="direccion" />
+    </div>
+
+    <div class="field">
+      <label>Edad</label>
+      <p-inputNumber
+        formControlName="edad"
+        [min]="18"
+        [max]="100">
+      </p-inputNumber>
+    </div>
+
+    <div class="field">
+      <label>Teléfono</label>
+      <input pInputText formControlName="telefono" />
+    </div>
+
+    <p-button
+      label="Registrarse"
+      icon="pi pi-user-plus"
+      type="submit"
+      [disabled]="registerForm.invalid">
+    </p-button>
+
+  </form>
+
+</p-card>

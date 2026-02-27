@@ -1,0 +1,26 @@
+<p-card header="Iniciar Sesión">
+
+  <form [formGroup]="loginForm"
+        (ngSubmit)="onSubmit()"
+        (keydown)="preventEnter($event)">
+
+    <div class="field">
+      <label>Usuario</label>
+      <input pInputText formControlName="username" />
+    </div>
+
+    <div class="field">
+      <label>Contraseña</label>
+      <p-password formControlName="password" [feedback]="false"></p-password>
+    </div>
+
+    <p-button
+      label="Ingresar"
+      icon="pi pi-sign-in"
+      type="submit"
+      [disabled]="loginForm.invalid">
+    </p-button>
+
+  </form>
+
+</p-card>

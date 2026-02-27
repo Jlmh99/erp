@@ -1,0 +1,33 @@
+/* Centrar el card en pantalla */
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Tamaño controlado del card */
+::ng-deep .p-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 1rem;
+}
+
+/* Espaciado uniforme entre campos */
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+/* Que los inputs ocupen todo el ancho */
+input,
+.p-password {
+  width: 100%;
+}
+
+/* Botón alineado y ancho completo */
+.p-button {
+  width: 100%;
+  margin-top: 1rem;
+}
