@@ -33,7 +33,7 @@ export class Register {
   constructor(private fb: FormBuilder, private router: Router) {
 
     this.registerForm = this.fb.group({
-    usuario: ['', Validators.required],
+    usuario: ['', [Validators.required,Validators.pattern(/^[a-zA-Z0-9._]+$/)]],
     email: ['', [Validators.required, Validators.email]],
     password: ['', [
       Validators.required,
@@ -41,8 +41,8 @@ export class Register {
       Validators.pattern(/^(?=.*[!@#$%^&*._]).{10,}$/)
     ]],
     confirmPassword: ['', Validators.required],
-    nombreCompleto: ['', Validators.required],
-    direccion: ['', Validators.required],
+    nombreCompleto: ['', [Validators.required,Validators.pattern(/^(?!\s*$).+/)]],
+    direccion: ['', [Validators.required,Validators.pattern(/^(?!\s*$).+/)]],
     edad: ['', [
       Validators.required,
       Validators.min(18),
