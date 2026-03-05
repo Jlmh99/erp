@@ -1,0 +1,23 @@
+<p-menubar [model]="items">
+
+    <ng-template pTemplate="start">
+        <div class="logo">
+            <i class="pi pi-building"></i>
+            <span>ERP System</span>
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="end">
+
+        <p-menu #menu [model]="userMenu" [popup]="true"></p-menu>
+
+        <p-avatar
+            icon="pi pi-user"
+            shape="circle"
+            size="large"
+            (click)="menu.toggle($event)">
+        </p-avatar>
+
+    </ng-template>
+
+</p-menubar>

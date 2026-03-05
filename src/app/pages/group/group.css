@@ -1,0 +1,15 @@
+.group-container{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.total-card{
+    width:200px;
+    text-align:center;
+}
+
+.ads-card{
+    height:200px;
+    border:2px dashed #ccc;
+}

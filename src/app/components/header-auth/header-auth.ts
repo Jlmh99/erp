@@ -5,14 +5,14 @@ import { ButtonModule } from 'primeng/button';
 import { MenubarModule } from 'primeng/menubar';
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-header-auth',
   standalone: true,
   imports: [RouterModule, ButtonModule, MenubarModule],
-  templateUrl: './header.html',
-  styleUrl: './header.css',
+  templateUrl: './header-auth.html',
+  styleUrl: './header-auth.css',
 })
-export class Header {
-   items: MenuItem[];
+export class HeaderAuth {
+items: MenuItem[];
 
   constructor(private router: Router) {
     this.items = [

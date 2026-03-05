@@ -6,7 +6,7 @@ import { ToolbarModule } from 'primeng/toolbar';
   standalone: true,
   imports: [ToolbarModule],
   templateUrl: './footer.html',
-  styleUrl: './footer.css',
+  styleUrls: ['./footer.css',]
 })
 export class Footer {
 

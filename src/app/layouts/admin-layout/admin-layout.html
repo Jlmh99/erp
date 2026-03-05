@@ -1,0 +1,25 @@
+<app-header-main></app-header-main>
+
+<main class="admin-content">
+
+    <!-- Si no hay páginas aún muestra esto -->
+    <p-card header="Panel de Administración">
+        <p>
+            Bienvenido al panel administrativo del sistema ERP.
+            Aquí se gestionarán los módulos internos del sistema
+            como usuarios, inventario, reportes y configuración.
+        </p>
+
+        <p>
+            Este espacio funcionará como contenedor para los
+            distintos módulos administrativos que se desarrollarán
+            posteriormente.
+        </p>
+    </p-card>
+
+    <!-- Aquí se cargarán las páginas admin -->
+    <router-outlet></router-outlet>
+
+</main>
+
+<app-footer></app-footer>
