@@ -1,9 +1,25 @@
-<h1>User Profile</h1>
+<p-toast></p-toast>
 
-<p-card header="Perfil">
+<p-card header="Perfil de Usuario">
 
-    <p><b>Nombre:</b> Juan</p>
-    <p><b>Email:</b> juan@email.com</p>
-    <p><b>Rol:</b> Admin</p>
+<div class="form">
+
+<label>Nombre</label>
+<input pInputText [(ngModel)]="usuario.nombre">
+
+<label>Email</label>
+<input pInputText [(ngModel)]="usuario.email">
+
+<label>Teléfono</label>
+<input pInputText [(ngModel)]="usuario.telefono">
+
+<button 
+pButton 
+label="Actualizar"
+icon="pi pi-save"
+(click)="actualizar()">
+</button>
+
+</div>
 
 </p-card>

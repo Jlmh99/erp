@@ -13,3 +13,10 @@
     height:200px;
     border:2px dashed #ccc;
 }
+
+.form{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:1rem;
+margin-bottom:2rem;
+}

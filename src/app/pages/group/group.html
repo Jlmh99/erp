@@ -10,10 +10,67 @@
     </p-card>
 
 
-    <p-card class="ads-card">
+<p-toast></p-toast>
 
-        <p>Espacio para anuncios</p>
+<p-card header="Crear Grupo">
 
-    </p-card>
+<div class="form">
+
+<input pInputText placeholder="ID" [(ngModel)]="nuevoGrupo.id">
+<input pInputText placeholder="Nombre" [(ngModel)]="nuevoGrupo.nombre">
+<input pInputText placeholder="Categoría" [(ngModel)]="nuevoGrupo.categoria">
+<input pInputText placeholder="Nivel" [(ngModel)]="nuevoGrupo.nivel">
+<input pInputText placeholder="Autor" [(ngModel)]="nuevoGrupo.autor">
+<input pInputText placeholder="Miembros" [(ngModel)]="nuevoGrupo.miembros">
+<input pInputText placeholder="Tickets" [(ngModel)]="nuevoGrupo.tickets">
+
+<button pButton label="Agregar Grupo" icon="pi pi-plus" (click)="agregar()"></button>
+
+</div>
+
+</p-card>
+
+<p-card header="Lista de Grupos">
+
+<p-table [value]="grupos">
+
+<ng-template pTemplate="header">
+<tr>
+<th>ID</th>
+<th>Nombre</th>
+<th>Categoría</th>
+<th>Nivel</th>
+<th>Autor</th>
+<th>Miembros</th>
+<th>Tickets</th>
+<th>Acciones</th>
+</tr>
+</ng-template>
+
+<ng-template pTemplate="body" let-grupo>
+<tr>
+<td>{{grupo.id}}</td>
+<td>{{grupo.nombre}}</td>
+<td>{{grupo.categoria}}</td>
+<td>{{grupo.nivel}}</td>
+<td>{{grupo.autor}}</td>
+<td>{{grupo.miembros}}</td>
+<td>{{grupo.tickets}}</td>
+
+<td>
+<button
+pButton
+icon="pi pi-trash"
+severity="danger"
+(click)="eliminar(grupo)">
+</button>
+</td>
+
+</tr>
+</ng-template>
+
+</p-table>
+
+</p-card>
 
 </div>
