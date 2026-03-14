@@ -1,44 +1,45 @@
 <div class="sidebar">
+  <div class="project">
+    <h2>Mi Proyecto</h2>
+  </div>
 
-    <div class="project">
-        <h2>Mi Proyecto</h2>
-    </div>
+  <div class="version">v1.6</div>
 
-    <div class="menu">
+  <div class="menu">
+    @if (isDashboardRoute()) {
+      <button pButton label="Dashboard" routerLink="/home" 
+              routerLinkActive #rlaDash="routerLinkActive"
+              [routerLinkActiveOptions]="{exact: true}"
+              [class.p-button-primary]="rlaDash.isActive"
+              [class.p-button-secondary]="!rlaDash.isActive"></button>
 
-        <button pButton label="Landing" 
-        routerLink="/">
-        </button>
+      <button pButton label="User" routerLink="/home/user" 
+              routerLinkActive #rlaUser="routerLinkActive"
+              [class.p-button-primary]="rlaUser.isActive"
+              [class.p-button-secondary]="!rlaUser.isActive"></button>
 
-        <button pButton label="Register"
-        routerLink="/register"
-        class="p-button-secondary">
-        </button>
+      <button pButton label="Group" routerLink="/home/group" 
+              routerLinkActive #rlaGroup="routerLinkActive"
+              [class.p-button-primary]="rlaGroup.isActive"
+              [class.p-button-secondary]="!rlaGroup.isActive"></button>
+    } @else {
+      <button pButton label="Landing" 
+              routerLink="/landing" 
+              routerLinkActive #rlaLand="routerLinkActive"
+              [class.p-button-primary]="rlaLand.isActive"
+              [class.p-button-secondary]="!rlaLand.isActive"></button>
 
-        <button pButton label="Login"
-        routerLink="/login"
-        class="p-button-secondary">
-        </button>
+      <button pButton label="Register" 
+              routerLink="/register" 
+              routerLinkActive #rlaReg="routerLinkActive"
+              [class.p-button-primary]="rlaReg.isActive"
+              [class.p-button-secondary]="!rlaReg.isActive"></button>
 
-        <button pButton label="Dashboard"
-        routerLink="/home"
-        class="p-button-secondary">
-        </button>
-
-        <button pButton label="User"
-        routerLink="/home/user"
-        class="p-button-secondary">
-        </button>
-
-        <button pButton label="Group"
-        routerLink="/home/group"
-        class="p-button-secondary">
-        </button>
-
-    </div>
-
-    <div class="version">
-        v1.45
-    </div>
-
+      <button pButton label="Login" 
+              routerLink="/login" 
+              routerLinkActive #rlaLog="routerLinkActive"
+              [class.p-button-primary]="rlaLog.isActive"
+              [class.p-button-secondary]="!rlaLog.isActive"></button>
+    }
+  </div>
 </div>

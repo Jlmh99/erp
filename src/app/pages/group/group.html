@@ -13,21 +13,48 @@
 <p-toast></p-toast>
 
 <p-card header="Crear Grupo">
+    <div class="form-container">
+        
+        <div class="field">
+            <label for="id">ID del Grupo</label>
+            <input pInputText id="id" placeholder="Ej: 101" [(ngModel)]="nuevoGrupo.id">
+        </div>
 
-<div class="form">
+        <div class="field">
+            <label for="nombre">Nombre</label>
+            <input pInputText id="nombre" placeholder="Nombre del grupo" [(ngModel)]="nuevoGrupo.nombre">
+        </div>
 
-<input pInputText placeholder="ID" [(ngModel)]="nuevoGrupo.id">
-<input pInputText placeholder="Nombre" [(ngModel)]="nuevoGrupo.nombre">
-<input pInputText placeholder="Categoría" [(ngModel)]="nuevoGrupo.categoria">
-<input pInputText placeholder="Nivel" [(ngModel)]="nuevoGrupo.nivel">
-<input pInputText placeholder="Autor" [(ngModel)]="nuevoGrupo.autor">
-<input pInputText placeholder="Miembros" [(ngModel)]="nuevoGrupo.miembros">
-<input pInputText placeholder="Tickets" [(ngModel)]="nuevoGrupo.tickets">
+        <div class="field">
+            <label for="categoria">Categoría</label>
+            <input pInputText id="categoria" placeholder="Ej: Social, Académico" [(ngModel)]="nuevoGrupo.categoria">
+        </div>
 
-<button pButton label="Agregar Grupo" icon="pi pi-plus" (click)="agregar()"></button>
+        <div class="field">
+            <label for="nivel">Nivel</label>
+            <input pInputText id="nivel" placeholder="Nivel" [(ngModel)]="nuevoGrupo.nivel">
+        </div>
 
-</div>
+        <div class="field">
+            <label for="autor">Autor</label>
+            <input pInputText id="autor" placeholder="Nombre del autor" [(ngModel)]="nuevoGrupo.autor">
+        </div>
 
+        <div class="field">
+            <label for="miembros">Miembros</label>
+            <input pInputText id="miembros" placeholder="Cantidad de miembros" [(ngModel)]="nuevoGrupo.miembros">
+        </div>
+
+        <div class="field">
+            <label for="tickets">Tickets</label>
+            <input pInputText id="tickets" placeholder="Número de tickets" [(ngModel)]="nuevoGrupo.tickets">
+        </div>
+
+        <div class="button-row">
+            <button pButton label="Agregar Grupo" icon="pi pi-plus" (click)="agregar()"></button>
+        </div>
+
+    </div>
 </p-card>
 
 <p-card header="Lista de Grupos">

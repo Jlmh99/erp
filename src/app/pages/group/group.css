@@ -20,3 +20,65 @@ grid-template-columns:repeat(3,1fr);
 gap:1rem;
 margin-bottom:2rem;
 }
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Se ajusta solo según el tamaño */
+    gap: 1.5rem; /* Espacio entre los labels/inputs */
+    padding: 1rem 0;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Para que los inputs ocupen todo el ancho de su columna */
+.field input {
+    width: 100%;
+}
+
+.button-container {
+    grid-column: 1 / -1; /* El botón ocupa todo el ancho al final */
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+/* Estilo extra para el total-card que tienes arriba */
+.total-card {
+    margin-bottom: 2rem;
+    display: inline-block;
+    min-width: 150px;
+}
+
+.form-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas responsivas */
+    gap: 20px;
+    padding: 10px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Espacio entre el Label y el Input */
+}
+
+.field label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #4b5563; /* Un gris profesional */
+}
+
+.button-row {
+    grid-column: 1 / -1; /* Hace que el botón abarque todo el ancho */
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+/* Para que el input de PrimeNG ocupe el 100% de su columna */
+input[pInputText] {
+    width: 100%;
+}

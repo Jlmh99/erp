@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { FloatLabelModule } from 'primeng/floatlabel';
 import { InputTextModule } from 'primeng/inputtext';
 import { TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
@@ -11,7 +12,7 @@ import { ToastModule } from 'primeng/toast';
   selector: 'app-group',
   standalone: true,
   imports: [FormsModule,TableModule,CardModule,
-    ButtonModule,InputTextModule,ToastModule],
+    ButtonModule,InputTextModule,ToastModule,FloatLabelModule],
   providers: [MessageService],
   templateUrl: './group.html',
   styleUrls: ['./group.css']
