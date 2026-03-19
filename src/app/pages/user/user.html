@@ -1,25 +1,53 @@
 <p-toast></p-toast>
 
-<p-card header="Perfil de Usuario">
+<p-card header="Mi Perfil">
+  <form [formGroup]="userForm" (submit)="actualizar()" class="form">
+    
+    <div class="field">
+      <label for="nombre" class="block mb-2">Nombre Completo</label>
+      <input 
+        id="nombre" 
+        pInputText 
+        formControlName="nombreCompleto" 
+        class="w-full"
+        [class.ng-dirty]="userForm.get('nombreCompleto')?.invalid && userForm.get('nombreCompleto')?.touched">
+      <small class="p-error block" *ngIf="userForm.get('nombreCompleto')?.invalid && userForm.get('nombreCompleto')?.touched">
+        El nombre es obligatorio.
+      </small>
+    </div>
 
-<div class="form">
+    <div class="field">
+      <label for="email" class="block mb-2">Email</label>
+      <input 
+        id="email" 
+        pInputText 
+        formControlName="email" 
+        class="w-full"
+        [class.ng-dirty]="userForm.get('email')?.invalid && userForm.get('email')?.touched">
+      <small class="p-error block" *ngIf="userForm.get('email')?.errors?.['email']">
+        Formato de email no válido.
+      </small>
+    </div>
 
-<label>Nombre</label>
-<input pInputText [(ngModel)]="usuario.nombre">
+    <div class="field">
+      <label for="tel" class="block mb-2">Teléfono (10 dígitos)</label>
+      <input 
+        id="tel" 
+        pInputText 
+        formControlName="telefono" 
+        class="w-full"
+        [class.ng-dirty]="userForm.get('telefono')?.invalid && userForm.get('telefono')?.touched">
+      <small class="p-error block" *ngIf="userForm.get('telefono')?.invalid && userForm.get('telefono')?.touched">
+        Debe tener exactamente 10 números.
+      </small>
+    </div>
 
-<label>Email</label>
-<input pInputText [(ngModel)]="usuario.email">
+    <p-button 
+      label="Actualizar Perfil" 
+      icon="pi pi-save" 
+      type="submit"
+      [disabled]="userForm.invalid">
+    </p-button>
 
-<label>Teléfono</label>
-<input pInputText [(ngModel)]="usuario.telefono">
-
-<button 
-pButton 
-label="Actualizar"
-icon="pi pi-save"
-(click)="actualizar()">
-</button>
-
-</div>
-
+  </form>
 </p-card>
