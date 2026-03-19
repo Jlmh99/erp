@@ -33,6 +33,11 @@ export class HeaderMain {
         icon: 'pi pi-file',
         routerLink: '/home/group'
       },
+      {
+        label: 'Tickets',
+        icon: 'pi pi-file',
+        routerLink: '/home/ticket'
+      },
     ];
 
     this.userMenu = [

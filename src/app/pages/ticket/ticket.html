@@ -1,1 +1,73 @@
-<p>ticket works!</p>
+<h2>Tickets</h2>
+
+<button pButton label="Nuevo Ticket" (click)="abrirCreate()"></button>
+
+<div class="lista">
+
+  <div class="card" *ngFor="let t of tickets">
+
+    <h3>{{t.titulo}}</h3>
+    <p>{{t.descripcion}}</p>
+
+    <p><b>Estado:</b> {{t.estado}}</p>
+    <p><b>Prioridad:</b> {{t.prioridad}}</p>
+
+    <button pButton label="Ver" (click)="verDetalle(t)"></button>
+
+  </div>
+
+</div>
+
+<p-dialog header="Crear Ticket"
+          [(visible)]="mostrarCreate"
+          [modal]="true"
+          [style]="{width:'400px'}">
+
+  <div class="form">
+
+    <input pInputText placeholder="Título"
+           [(ngModel)]="nuevoTicket.titulo">
+
+    <textarea placeholder="Descripción"
+              [(ngModel)]="nuevoTicket.descripcion"></textarea>
+
+    <input pInputText placeholder="Estado (Pendiente, En progreso...)"
+           [(ngModel)]="nuevoTicket.estado">
+
+    <input pInputText placeholder="Asignado a"
+           [(ngModel)]="nuevoTicket.asignadoA">
+
+    <input pInputText placeholder="Prioridad (Baja, Media, Alta)"
+           [(ngModel)]="nuevoTicket.prioridad">
+
+    <input type="date"
+           [(ngModel)]="nuevoTicket.fechaLimite">
+
+  </div>
+
+  <ng-template pTemplate="footer">
+    <button pButton label="Guardar" (click)="crearTicket()"></button>
+  </ng-template>
+
+</p-dialog>
+
+<p-dialog header="Detalle"
+          [(visible)]="mostrarDetail"
+          [modal]="true"
+          [style]="{width:'500px'}">
+
+  <div *ngIf="ticketSeleccionado">
+
+    <h3>{{ticketSeleccionado.titulo}}</h3>
+    <p>{{ticketSeleccionado.descripcion}}</p>
+
+    <p><b>Estado:</b> {{ticketSeleccionado.estado}}</p>
+    <p><b>Prioridad:</b> {{ticketSeleccionado.prioridad}}</p>
+    <p><b>Asignado:</b> {{ticketSeleccionado.asignadoA}}</p>
+
+    <p><b>Fecha creación:</b> {{ticketSeleccionado.fechaCreacion | date:'dd/MM/yyyy HH:mm'}}</p>
+    <p><b>Fecha límite:</b> {{ticketSeleccionado.fechaLimite}}</p>
+
+  </div>
+
+</p-dialog>

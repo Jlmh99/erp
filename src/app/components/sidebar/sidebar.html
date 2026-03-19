@@ -22,6 +22,13 @@
               routerLinkActive #rlaGroup="routerLinkActive"
               [class.p-button-primary]="rlaGroup.isActive"
               [class.p-button-secondary]="!rlaGroup.isActive"></button>
+
+       <button pButton label="Ticket" routerLink="/home/ticket" 
+              routerLinkActive #rlaGroup="routerLinkActive"
+              [class.p-button-primary]="rlaGroup.isActive"
+              [class.p-button-secondary]="!rlaGroup.isActive"></button>
+
+        
     } @else {
       <button pButton label="Landing" 
               routerLink="/landing" 

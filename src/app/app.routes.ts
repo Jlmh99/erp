@@ -7,6 +7,7 @@ import { Group } from './pages/group/group';
 import { Landing } from './pages/landing/landing';
 import { Login } from './pages/login/login';
 import { Register } from './pages/register/register';
+import { TicketComponent } from './pages/ticket/ticket';
 import { User } from './pages/user/user';
 
 export const routes: Routes = [
@@ -40,7 +41,8 @@ export const routes: Routes = [
        },
       { 
         path:'group', component: Group
-      }
+      },
+      { path: 'ticket', component: TicketComponent }
     ]
   },
 

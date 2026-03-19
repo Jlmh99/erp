@@ -1,0 +1,17 @@
+.lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 250px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
