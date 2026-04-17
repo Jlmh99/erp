@@ -1,0 +1,31 @@
+<!-- Sidebar -->
+<app-sidebar [visible]="sidebarVisible()" (closeSidebar)="closeSidebar()" />
+
+<!-- Logout Confirm Dialog -->
+<p-confirmDialog [style]="{ width: '400px' }" styleClass="black-theme-dialog" />
+
+<!-- Main wrapper -->
+<div class="layout-wrapper">
+    <!-- Topbar -->
+    <header class="topbar">
+        <div class="topbar-left">
+            <p-button icon="pi pi-bars" [text]="true" [rounded]="true" severity="secondary"
+                styleClass="topbar-hamburger" (click)="toggleSidebar()" />
+            <span class="topbar-title">Seguridad</span>
+        </div>
+
+        <div class="topbar-right">
+            <div class="topbar-user">
+                <div class="user-avatar">{{ userInitial }}</div>
+                <span class="user-name">{{ userName }}</span>
+            </div>
+            <p-button icon="pi pi-sign-out" [text]="true" [rounded]="true" severity="danger" pTooltip="Cerrar sesión"
+                (click)="confirmLogout()" />
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="layout-content">
+        <router-outlet />
+    </main>
+</div>

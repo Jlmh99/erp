@@ -1,0 +1,629 @@
+/* ===== User Profile Container ===== */
+.user-profile-container {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* ===== Suspended Banner ===== */
+.suspended-banner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border: 1px solid #f59e0b;
+    border-radius: 14px;
+    padding: 1rem 1.5rem;
+    animation: bannerSlideIn 0.35s ease-out;
+}
+
+@keyframes bannerSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.suspended-banner>i {
+    font-size: 1.5rem;
+    color: #d97706;
+    flex-shrink: 0;
+}
+
+.suspended-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 0.15rem;
+}
+
+.suspended-info strong {
+    font-size: 0.95rem;
+    color: #92400e;
+}
+
+.suspended-info span {
+    font-size: 0.82rem;
+    color: #a16207;
+}
+
+/* ===== Header Card ===== */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0.5rem 0;
+    flex-wrap: wrap;
+}
+
+:host ::ng-deep .profile-avatar {
+    background: linear-gradient(135deg, #6366f1, #a78bfa);
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+}
+
+.profile-header-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    flex: 1;
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #6d28d9;
+    margin: 0;
+}
+
+.profile-username {
+    font-size: 0.95rem;
+    color: #8b8fa8;
+    margin: 0 0 0.25rem;
+}
+
+/* ===== Header Action Buttons ===== */
+.header-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+/* ===== Status Indicator ===== */
+.status-active {
+    color: #059669 !important;
+    font-size: 0.65rem !important;
+}
+
+.status-inactive {
+    color: #d97706 !important;
+    font-size: 0.65rem !important;
+}
+
+/* ===== Details Grid ===== */
+.details-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 0;
+}
+
+.detail-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ede9fe, #f3e8ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.detail-icon i {
+    font-size: 1.1rem;
+    color: #7c3aed;
+}
+
+.detail-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.detail-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #a5b4c8;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.detail-value {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #6d28d9;
+}
+
+/* ===== PrimeNG Card Overrides ===== */
+:host ::ng-deep .profile-header-card .p-card {
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.08);
+    border: 1px solid #e9e5f5;
+}
+
+:host ::ng-deep .profile-details-card .p-card {
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.08);
+    border: 1px solid #e9e5f5;
+}
+
+/* ===== Inputs Theme (Password/Datepicker Overrides) ===== */
+:host ::ng-deep .black-theme-password,
+:host ::ng-deep .black-theme-datepicker {
+    display: block;
+    width: 100%;
+}
+
+:host ::ng-deep .black-theme-password .p-password,
+:host ::ng-deep .black-theme-datepicker .p-datepicker {
+    width: 100%;
+}
+
+:host ::ng-deep .black-theme-password .p-password-input,
+:host ::ng-deep .black-theme-datepicker .p-inputtext {
+    height: 3rem;
+    background: #000000 !important;
+    color: #ffffff !important;
+    border: 1px solid #404040 !important;
+    border-radius: 8px;
+    padding-left: 2.75rem !important;
+    padding-right: 2.5rem !important;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+:host ::ng-deep .black-theme-password i.p-password-toggle-mask {
+    color: #737373;
+    right: 1rem;
+}
+
+:host ::ng-deep .black-theme-datepicker .p-datepicker-trigger {
+    background: transparent;
+    border: none;
+    color: #737373;
+}
+
+/* ===== Edit Profile Dialog — Dark Theme ===== */
+:host ::ng-deep .profile-edit-dialog .p-dialog,
+:host ::ng-deep .p-dialog {
+    border-radius: 18px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    overflow: hidden;
+    background: #1a1625 !important;
+}
+
+:host ::ng-deep .p-dialog-header {
+    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+    background: #221d33 !important;
+    padding: 1.25rem 1.5rem;
+}
+
+:host ::ng-deep .p-dialog-title {
+    font-weight: 800;
+    color: #c4b5fd;
+    font-size: 1.1rem;
+}
+
+:host ::ng-deep .p-dialog-header-close {
+    color: #a78bfa !important;
+}
+:host ::ng-deep .p-dialog-header-close:hover {
+    background: rgba(167, 139, 250, 0.15) !important;
+    color: #c4b5fd !important;
+}
+
+:host ::ng-deep .p-dialog-content {
+    padding: 1.5rem;
+    background: #1a1625 !important;
+    color: #e2deff;
+}
+
+:host ::ng-deep .p-dialog-footer {
+    border-top: 1px solid rgba(139, 92, 246, 0.2);
+    background: #221d33 !important;
+    padding: 1rem 1.5rem;
+}
+
+/* ===== Dialog Footer — Buttons ===== */
+.edit-dialog-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+/* Cancel button */
+:host ::ng-deep .edit-dialog-footer .p-button-secondary.p-button-text,
+:host ::ng-deep .p-dialog-footer .p-button-secondary.p-button-text {
+    border: 1.5px solid rgba(139, 92, 246, 0.35) !important;
+    border-radius: 10px !important;
+    color: #a78bfa !important;
+    font-weight: 600;
+    padding: 0.5rem 1.25rem;
+    transition: all 0.15s ease;
+    background: transparent !important;
+}
+
+:host ::ng-deep .edit-dialog-footer .p-button-secondary.p-button-text:hover,
+:host ::ng-deep .p-dialog-footer .p-button-secondary.p-button-text:hover {
+    background: rgba(139, 92, 246, 0.12) !important;
+    border-color: #a78bfa !important;
+    color: #c4b5fd !important;
+}
+
+/* Primary save button */
+:host ::ng-deep .edit-dialog-footer .p-button-primary,
+:host ::ng-deep .p-dialog-footer .p-button-primary {
+    border-radius: 10px !important;
+    font-weight: 700;
+    padding: 0.5rem 1.5rem;
+}
+
+/* Edit form layout */
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.edit-form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.edit-form-two {
+    display: flex;
+    gap: 1rem;
+}
+
+.edit-form-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.edit-form label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #a78bfa;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.edit-input {
+    width: 100%;
+}
+
+/* Dark inputs inside all dialogs */
+:host ::ng-deep .p-dialog .p-inputtext,
+:host ::ng-deep .p-dialog .p-password-input,
+:host ::ng-deep .p-dialog .p-datepicker-input {
+    background: #2d2540 !important;
+    border-color: rgba(139, 92, 246, 0.3) !important;
+    color: #e2deff !important;
+    border-radius: 10px;
+}
+:host ::ng-deep .p-dialog .p-inputtext::placeholder,
+:host ::ng-deep .p-dialog .p-password-input::placeholder {
+    color: #6b6282 !important;
+}
+:host ::ng-deep .p-dialog .p-inputtext:focus,
+:host ::ng-deep .p-dialog .p-password-input:focus {
+    border-color: #a78bfa !important;
+    box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.2) !important;
+}
+:host ::ng-deep .p-dialog .p-select {
+    background: #2d2540 !important;
+    border-color: rgba(139, 92, 246, 0.3) !important;
+    border-radius: 10px;
+}
+:host ::ng-deep .p-dialog .p-select-label { color: #e2deff !important; }
+:host ::ng-deep .p-dialog .p-select-overlay {
+    background: #221d33 !important;
+    border: 1px solid rgba(139, 92, 246, 0.25) !important;
+    border-radius: 12px !important;
+}
+:host ::ng-deep .p-dialog .p-select-option { color: #e2deff !important; }
+:host ::ng-deep .p-dialog .p-select-option:hover {
+    background: rgba(139, 92, 246, 0.15) !important;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-header-info {
+        align-items: center;
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: center;
+    }
+
+    :host ::ng-deep .profile-avatar {
+        width: 64px;
+        height: 64px;
+        font-size: 1.4rem;
+    }
+
+    .profile-name {
+        font-size: 1.25rem;
+    }
+
+    .edit-form-two {
+        flex-direction: column;
+    }
+
+    .suspended-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+    }
+
+    :host ::ng-deep .profile-edit-dialog .p-dialog {
+        width: 95vw !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .user-profile-container {
+        gap: 1rem;
+    }
+
+    .header-actions {
+        flex-direction: column;
+    }
+
+    :host ::ng-deep .profile-header-card .p-card,
+    :host ::ng-deep .profile-details-card .p-card {
+        border-radius: 12px;
+    }
+
+    .detail-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+    }
+
+    .detail-icon i {
+        font-size: 0.95rem;
+    }
+
+    :host ::ng-deep .profile-edit-dialog .p-dialog {
+        width: 98vw !important;
+        border-radius: 14px !important;
+    }
+}
+
+/* ===== Tickets Section ===== */
+.tickets-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 100%;
+}
+
+:host ::ng-deep .tickets-toolbar.p-toolbar {
+    border-radius: 16px 16px 0 0;
+    background: linear-gradient(135deg, #221d33, #1e1a2e);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+    padding: 0.8rem 1.25rem;
+}
+
+.toolbar-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #7c3aed;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.toolbar-title i {
+    color: #7c3aed;
+}
+
+/* Ticket Table */
+:host ::ng-deep .tickets-table .p-datatable-header-row>tr>th {
+    background: linear-gradient(135deg, #7c3aed, #8b5cf6, #a78bfa) !important;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border: none !important;
+    padding: 0.9rem 1rem;
+}
+
+:host ::ng-deep .tickets-table .p-datatable-table-container {
+    border-radius: 0 0 16px 16px;
+    overflow: hidden;
+    border: 1px solid #e9e5f5;
+    border-top: none;
+    box-shadow: 0 4px 24px rgba(139, 92, 246, 0.08);
+}
+
+:host ::ng-deep .tickets-table .p-datatable-tbody>tr {
+    transition: background-color 0.2s ease;
+}
+
+:host ::ng-deep .tickets-table .p-datatable-tbody>tr:hover {
+    background: rgba(139, 92, 246, 0.08) !important;
+}
+
+:host ::ng-deep .tickets-table .p-datatable-tbody>tr>td {
+    padding: 0.85rem 1rem;
+    font-size: 0.87rem;
+    color: #5b5e76;
+    border-bottom: 1px solid #f1eef9;
+}
+
+:host ::ng-deep .tickets-table .p-paginator {
+    border: none;
+    padding: 0.75rem;
+    background: #1a1625;
+}
+
+.ticket-title {
+    font-weight: 700;
+    color: #6d28d9;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 0.25rem;
+}
+
+:host ::ng-deep .action-buttons .p-button.p-button-text:hover {
+    background: rgba(139, 92, 246, 0.1) !important;
+}
+
+/* Ticket readonly value (status dialog) */
+.ticket-readonly-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #6d28d9;
+    padding: 0.5rem 0;
+}
+
+/* Historial de Cambios */
+.historial-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background: #f8f7ff;
+    border-radius: 10px;
+    border: 1px solid #ede9fe;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.historial-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    color: #6b7280;
+}
+
+.historial-item i {
+    font-size: 0.75rem;
+    color: #a78bfa;
+}
+
+/* ===== Ticket Summary Cards ===== */
+.ticket-summary-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+.ticket-summary-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 1.25rem;
+    border-radius: 14px;
+    border: 1px solid #e9e5f5;
+    background: rgba(255, 255, 255, 0.85);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.ticket-summary-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.12);
+}
+.ticket-summary-card i {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+.summary-value {
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+.summary-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #8b8fa8;
+}
+.summary-open { border-left: 3px solid #94a3b8; }
+.summary-open i, .summary-open .summary-value { color: #64748b; }
+.summary-progress { border-left: 3px solid #6366f1; }
+.summary-progress i, .summary-progress .summary-value { color: #4f46e5; }
+.summary-done { border-left: 3px solid #10b981; }
+.summary-done i, .summary-done .summary-value { color: #059669; }
+
+/* ===== Permissions List ===== */
+.permissions-list {
+    display: flex;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+    margin-top: 0.25rem;
+}
+.detail-item-full {
+    align-items: flex-start;
+}
+
+/* ===== No Permission ===== */
+.no-permission-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: #8b8fa8;
+}
+.no-permission-message i { font-size: 3.5rem; color: #c4b5fd; }
+.no-permission-message h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #6d28d9;
+}
+.no-permission-message p { margin: 0; }
+
+/* ===== Responsive additions ===== */
+@media (max-width: 600px) {
+    .ticket-summary-cards {
+        grid-template-columns: 1fr;
+    }
+}
